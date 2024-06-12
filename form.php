@@ -17,11 +17,21 @@
                 <div class="form-group">
                     <label for="charnumber">Numero caratteri:</label>
                     <input type="number" name="charnumber" id="charnumber">
-                    <!-- <label for="rating">Voto sufficente:</label> -->
-                    <!-- <select name="rating" id="rating">
+                    <label for="numeric">Vuoi anche i numeri?</label>
+                    <select name="numeric" id="rating">
                         <option value="true">SI</option>
                         <option value="false">NO</option>
-                    </select> -->
+                    </select>
+                    <label for="special">Vuoi anche caratteri speciali?</label>
+                    <select name="special" id="special">
+                        <option value="true">SI</option>
+                        <option value="false">NO</option>
+                    </select>
+                    <label for="upper">Vuoi anche caratteri Uppercase?</label>
+                    <select name="upper" id="upper">
+                        <option value="true">SI</option>
+                        <option value="false">NO</option>
+                    </select>
                 </div>
                 <div class="form-group">
                     <button type="submit">Vai!</button>

@@ -11,12 +11,18 @@ $numbers = '0123456789';
 
 $passLenght = $_GET['charnumber'];
 
+$ifNumeric = $_GET['numeric'];
+
+$ifSpecial = $_GET['special'];
+
+$ifUpperCase = $_GET['upper'];
+
 
 function passwordGen($charNumb, $typeCharacters)
 {
     $password = '';
     for ($i = 0; $i < $charNumb; $i++) {
-        $password .= $typeCharacters[rand(0, $charNumb - 1)];
+        $password .= $typeCharacters[rand(0, strlen($typeCharacters) - 1)];
     }
     return $password;
 }
@@ -39,7 +45,25 @@ function passwordGen($charNumb, $typeCharacters)
         la tua password appena generata:
     </h2>
     <div>
-        <?= passwordGen($passLenght, $characters) ?>
+        <?php
+        if ($ifNumeric == 'true' && $ifSpecial == 'true' && $ifUpperCase == 'true') {
+            echo passwordGen($passLenght, $characters . $numbers . $special . $uppercharacters);
+        } elseif ($ifNumeric == 'true' && $ifSpecial == 'true') {
+            echo passwordGen($passLenght, $characters . $numbers . $special);
+        } elseif ($ifUpperCase == 'true' && $ifSpecial == 'true') {
+            echo passwordGen($passLenght, $characters . $numbers . $special);
+        } elseif ($ifUpperCase == 'true' && $ifNumeric == 'true') {
+            echo passwordGen($passLenght, $characters . $uppercharacters . $special);
+        } elseif ($ifUpperCase == 'true') {
+            echo passwordGen($passLenght, $characters . $uppercharacters);
+        } elseif ($ifNumeric == 'true') {
+            echo passwordGen($passLenght, $characters . $numbers);
+        } elseif ($ifSpecial == 'true') {
+            echo passwordGen($passLenght, $characters . $special);
+        } else {
+            echo passwordGen($passLenght, $characters);
+        }
+        ?>
     </div>
 </body>
 
