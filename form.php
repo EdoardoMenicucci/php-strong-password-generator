@@ -20,17 +20,17 @@
                     <label for="numeric">Vuoi anche i numeri?</label>
                     <select name="numeric" id="rating">
                         <option value="true">SI</option>
-                        <option value="false">NO</option>
+                        <option value="">NO</option>
                     </select>
                     <label for="special">Vuoi anche caratteri speciali?</label>
                     <select name="special" id="special">
                         <option value="true">SI</option>
-                        <option value="false">NO</option>
+                        <option value="">NO</option>
                     </select>
                     <label for="upper">Vuoi anche caratteri Uppercase?</label>
                     <select name="upper" id="upper">
                         <option value="true">SI</option>
-                        <option value="false">NO</option>
+                        <option value="">NO</option>
                     </select>
                 </div>
                 <div class="form-group">

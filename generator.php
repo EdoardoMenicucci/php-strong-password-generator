@@ -27,6 +27,13 @@ function passwordGen($charNumb, $typeCharacters)
     return $password;
 }
 
+// Costruzione del set di caratteri
+$typeCharacters = $characters;
+if ($ifUpperCase == true) $typeCharacters .= $uppercharacters;
+if ($ifNumeric == true) $typeCharacters .= $numbers;
+if ($ifSpecial == true) $typeCharacters .= $special;
+
+$password = passwordGen($passLenght, $typeCharacters);
 
 ?>
 
@@ -46,23 +53,7 @@ function passwordGen($charNumb, $typeCharacters)
     </h2>
     <div>
         <?php
-        if ($ifNumeric == 'true' && $ifSpecial == 'true' && $ifUpperCase == 'true') {
-            echo passwordGen($passLenght, $characters . $numbers . $special . $uppercharacters);
-        } elseif ($ifNumeric == 'true' && $ifSpecial == 'true') {
-            echo passwordGen($passLenght, $characters . $numbers . $special);
-        } elseif ($ifUpperCase == 'true' && $ifSpecial == 'true') {
-            echo passwordGen($passLenght, $characters . $numbers . $special);
-        } elseif ($ifUpperCase == 'true' && $ifNumeric == 'true') {
-            echo passwordGen($passLenght, $characters . $uppercharacters . $special);
-        } elseif ($ifUpperCase == 'true') {
-            echo passwordGen($passLenght, $characters . $uppercharacters);
-        } elseif ($ifNumeric == 'true') {
-            echo passwordGen($passLenght, $characters . $numbers);
-        } elseif ($ifSpecial == 'true') {
-            echo passwordGen($passLenght, $characters . $special);
-        } else {
-            echo passwordGen($passLenght, $characters);
-        }
+        echo $password;
         ?>
     </div>
 </body>
